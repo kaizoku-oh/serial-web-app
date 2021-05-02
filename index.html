@@ -10,14 +10,12 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- User CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- User JS -->
-  <script src="script.js"></script>
-  <title>SerialWeb</title>
+  <title>Serial Web Monitor</title>
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">SerialWeb</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,12 +34,56 @@
         <li class="nav-item active">
         </li>
       </ul>
-      <button class="btn btn-outline-primary mr-sm-2" onclick="clickConnect()">Connect</button>
-      <button class="btn btn-outline-danger my-2 my-sm-0" onclick="clickDisconnect()">Disconnect</button>
+      <div class="row">
+        <div class="col-sm">
+          <button class="btn btn-outline-primary" id="connect">Connect</button>
+        </div>
+        <div class="col-sm">
+          <button class="btn btn-outline-danger" id="disconnect">Disconnect</button>
+        </div>
+        <div class="col-sm">
+          <button class="btn btn-outline-info" id="clear">Clear</button>
+        </div>
+      </div>
     </div>
   </nav>
   <!-- Navbar end -->
   <div class="container">
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+        <div class="jumbotron">
+          <h1 class="display-4">Serial web monitor</h1>
+          <p class="lead">This is a simple web serial monitor that opens a serial port on your PC and monitor received
+            data in
+            the browser</p>
+          <hr class="my-4">
+          <p>It uses the <a href="https://wicg.github.io/serial" target="_blank">Serial API </a>which enables the
+            browser
+            to
+            communicate with
+            devices such as microcontrollers, 3D
+            printers, and other serial devices.
+          </p>
+          <p class="lead">
+            <a class="btn btn-primary btn-lg" href="https://web.dev/serial/" target="_blank" role="button">Learn
+              more</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-10">
+        <pre id="log"></pre>
+      </div>
+      <div class="col-1">
+      </div>
+    </div>
   </div>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -54,6 +96,8 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+  <!-- User JS -->
+  <script src="script.js"></script>
 </body>
 
 </html>
